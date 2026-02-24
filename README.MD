@@ -32,6 +32,4 @@ A full-stack application with a **Node.js and Express** server and a **React** c
 
 ### Screen Recording
 
-<video src="https://github.com/ravitejaleadmaster-art/Mini_Lead_Management_System/blob/master/screenshots/Day3_record.mp4" loop autoplay >
-  Your browser does not support the video tag.
-</video>
+
