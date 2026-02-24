@@ -18,5 +18,12 @@ app.get('/', (req, res) => {
 
 app.use('/', require('./routes/health'));
 
+// API routes
+app.use('/api/leads', require('./routes/leads'));
+
+
+const errorHandler = require('./middleware/errorHandler');
+app.use(errorHandler);
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

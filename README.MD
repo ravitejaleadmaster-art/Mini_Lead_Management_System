@@ -19,3 +19,13 @@ A full-stack application with a **Node.js and Express** server and a **React** c
 ### Backend 
 ![backend screenshot](./screenshots/Backend.png)
 
+# Day 2
+
+### postman_screenshots
+### 1. Postmethod's
+![postman screenshot_Post](./screenshots/Day2_Post.png)
+
+### 2. Getmethod's
+![postman screenshot_Get](./screenshots/Day2_Get.png)
+
+
