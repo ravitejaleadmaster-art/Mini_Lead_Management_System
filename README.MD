@@ -32,6 +32,6 @@ A full-stack application with a **Node.js and Express** server and a **React** c
 
 ### Screen Recording
 
-<video src="./screenshots/Recording_day3.mp4" controls>
+<video src="./screenshots/Day3_record.mp4" loop autoplay >
   Your browser does not support the video tag.
 </video>
