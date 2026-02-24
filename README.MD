@@ -32,4 +32,4 @@ A full-stack application with a **Node.js and Express** server and a **React** c
 
 ### Screen Recording
 
-
+##### please go in the screenshots folder and find the Day3_record.mp4  (.screenshots/Day3_Recording )
