@@ -10,6 +10,6 @@ router.post('/', validateCreateLead, leadController.createLead);
 router.get('/', leadController.listLeads);
 
 // PATCH /api/leads/:id/status - update status
-// router.patch('/:id/status', validateUpdateStatus, leadController.updateLeadStatus);
+router.patch('/:id/status', validateUpdateStatus, leadController.updateLeadStatus);
 
 module.exports = router;

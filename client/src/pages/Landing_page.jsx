@@ -1,10 +1,12 @@
 import React from 'react'
-import Hero from '../components/Hero'
+
+import LeadsPage from '../components/Leads/LeadsPage'
+import './landing.css'
 
 const Landing_page = () => {
   return (
     <>
-      <Hero />
+      <LeadsPage />
     </>
   )
 }

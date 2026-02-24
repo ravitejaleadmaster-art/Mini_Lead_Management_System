@@ -22,10 +22,16 @@ A full-stack application with a **Node.js and Express** server and a **React** c
 # Day 2
 
 ### postman_screenshots
-### 1. Postmethod's
+### 1. Post Method's SS
 ![postman screenshot_Post](./screenshots/Day2_Post.png)
 
-### 2. Getmethod's
+### 2. Get Method's SS
 ![postman screenshot_Get](./screenshots/Day2_Get.png)
 
+# Day 3
 
+### Screen Recording
+
+<video src="./screenshots/Recording_day3.mp4" controls>
+  Your browser does not support the video tag.
+</video>

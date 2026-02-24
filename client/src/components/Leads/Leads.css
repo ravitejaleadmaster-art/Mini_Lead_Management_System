@@ -1,0 +1,47 @@
+.leads-form, .leads-table-wrap { box-shadow: 0 1px 4px rgba(0,0,0,0.08); padding: 12px; border-radius: 6px; background: #fff; }
+.leads-form { max-width: 360px; margin-bottom: 16px; }
+.leads-form .field { margin-bottom: 8px; display:flex; flex-direction:column; }
+.leads-form input, .leads-form select { padding:6px 8px; border:1px solid #ddd; border-radius:4px }
+.leads-form .actions { margin-top:8px }
+.leads-form button { padding:8px 12px; border-radius:4px; cursor:pointer }
+.error { color: #a00; margin-top:8px }
+.loader { color: #444; }
+.leads-table { width:100%; border-collapse:collapse }
+.leads-table th, .leads-table td { padding:8px 10px; border-bottom:1px solid #eee; text-align:left }
+.status-badge { padding:4px 8px; border-radius:12px; color:#fff; font-weight:600 }
+.badge-new { background:#2b8aef }
+.badge-contacted { background:#f5a623 }
+.badge-closed { background:#6c757d }
+.tiny { font-size:12px; margin-left:8px; color:#666 }
+
+
+.loader-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 20px;
+}
+
+.loader-dots span {
+  width: 10px;
+  height: 10px;
+  background: #3498db;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  to { transform: translateY(-10px); }
+}
+.loader-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}

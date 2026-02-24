@@ -1,0 +1,3 @@
+.leads-page { display:flex; gap:16px; padding:20px }
+.leads-page .left { width:340px }
+.leads-page .right { flex:1 }
