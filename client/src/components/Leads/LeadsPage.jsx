@@ -12,6 +12,7 @@ export default function LeadsPage() {
   const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const load = useCallback(async () => {
     setError(null);
@@ -27,6 +28,15 @@ export default function LeadsPage() {
   }, []);
 
   useEffect(() => { load(); }, [load]);
+
+  // Filter leads based on search query
+  const filteredLeads = leads.filter(lead => {
+    const query = searchQuery.toLowerCase();
+    return (
+      lead.name.toLowerCase().includes(query) ||
+      (lead.phone && lead.phone.includes(query))
+    );
+  });
 
   // load a small public Lottie JSON for the loader (one-time)
   const [anim, setAnim] = useState(null);
@@ -46,6 +56,21 @@ export default function LeadsPage() {
       </div>
       <div className="right">
         <h3>Leads</h3>
+        <input
+          type="text"
+          placeholder="Search by name or phone..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="search-input"
+          style={{
+            width: '100%',
+            padding: '10px',
+            marginBottom: '15px',
+            border: '1px solid #ddd',
+            borderRadius: '4px',
+            fontSize: '14px'
+          }}
+        />
         {loading && (
         <div className="loader-overlay">
             {anim ? (
@@ -56,7 +81,7 @@ export default function LeadsPage() {
         </div>
         )}
         {error && <div className="error">{error}</div>}
-        {!loading && !error && <LeadTable leads={leads} onReload={load} />}
+        {!loading && !error && <LeadTable leads={filteredLeads} onReload={load} />}
       </div>
     </div>
   );
