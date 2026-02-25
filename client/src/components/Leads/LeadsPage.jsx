@@ -12,20 +12,27 @@ export default function LeadsPage() {
   const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const [limit] = useState(10);
+  const [totalPages, setTotalPages] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const load = useCallback(async () => {
+  const load = useCallback(async (p = 1) => {
     setError(null);
     setLoading(true);
     try {
-      const res = await fetchLeads();
+      const res = await fetchLeads(p, limit);
       setLeads(res.data || []);
+      if (res.meta) {
+        setTotalPages(res.meta.totalPages || 1);
+        setPage(res.meta.page || p);
+      }
     } catch (err) {
       setError(err.message || 'Failed to load leads');
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [limit]);
 
   useEffect(() => { load(); }, [load]);
 
@@ -81,7 +88,11 @@ export default function LeadsPage() {
         </div>
         )}
         {error && <div className="error">{error}</div>}
-        {!loading && !error && <LeadTable leads={filteredLeads} onReload={load} />}
+        {!loading && !error && (
+          <>
+            <LeadTable leads={filteredLeads} onReload={() => load(page)} page={page} totalPages={totalPages} onPageChange={(p) => load(p)} />
+          </>
+        )}
       </div>
     </div>
   );

@@ -15,10 +15,18 @@ exports.createLead = async (req, res, next) => {
 // List leads (simple pagination optional query)
 exports.listLeads = async (req, res, next) => {
   try {
-    const { page = 1, limit = 50 } = req.query;
-    const skip = (Math.max(parseInt(page, 10), 1) - 1) * Math.max(parseInt(limit, 10), 1);
-    const leads = await Lead.find().sort({ createdAt: -1 }).skip(skip).limit(parseInt(limit, 10));
-    res.json({ success: true, data: leads });
+    let { page = 1, limit = 50 } = req.query;
+    page = Math.max(parseInt(page, 10) || 1, 1);
+    limit = Math.max(parseInt(limit, 10) || 50, 1);
+    const skip = (page - 1) * limit;
+
+    const [leads, total] = await Promise.all([
+      Lead.find().sort({ createdAt: -1 }).skip(skip).limit(limit),
+      Lead.countDocuments(),
+    ]);
+
+    const totalPages = Math.max(Math.ceil(total / limit), 1);
+    res.json({ success: true, data: leads, meta: { total, totalPages, page, limit } });
   } catch (err) {
     next(err);
   }

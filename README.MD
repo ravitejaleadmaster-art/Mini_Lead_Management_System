@@ -114,3 +114,16 @@ note : tokens are refreshed for every 15mins and longlived for the 7 days which 
 ![postman screenshot_Get](./screenshots/Testing_without_token.png)
 ### Testing with token
 ![postman screenshot_Get](./screenshots/Testing_with_token.png)
+
+
+# Day 5
+
+
+so added the pagination via use effects in frontend and grasped the 
+
+
+so the cons if the “If this had 500k leads, what breaks first?”
+
+1) The Browser Memory (Frontend Crash)
+       
+2) Database Query Performance (Backend Lag)

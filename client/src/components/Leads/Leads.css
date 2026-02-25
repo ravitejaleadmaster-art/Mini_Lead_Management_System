@@ -14,6 +14,12 @@
 .badge-closed { background:#6c757d }
 .tiny { font-size:12px; margin-left:8px; color:#666 }
 
+.pagination { display:flex; gap:6px; align-items:center; margin-top:12px }
+.pagination button { padding:6px 10px; border-radius:4px; border:1px solid #ddd; background:#fff; cursor:pointer }
+.pagination button.active { background:#2b8aef; color:#fff; border-color:transparent }
+.pagination button:disabled { opacity:0.5; cursor:not-allowed }
+.pagination .ellipsis { padding:0 6px; color:#666 }
+
 
 .loader-dots {
   display: flex;

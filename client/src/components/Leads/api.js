@@ -32,9 +32,8 @@ api.interceptors.response.use(
 
 // 4. Updated API functions using the 'api' instance
 export async function fetchLeads(page = 1, limit = 50) {
-  // api.get automatically uses the baseURL and headers
   const res = await api.get(`/leads?page=${page}&limit=${limit}`);
-  return res.data; // Axios returns data in the 'data' property
+  return res.data; // contains { success, data, meta }
 }
 
 export async function createLead(payload) {
