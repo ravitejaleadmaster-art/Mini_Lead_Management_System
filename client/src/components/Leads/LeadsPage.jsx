@@ -4,6 +4,9 @@ import LeadTable from './LeadTable';
 import { fetchLeads } from './api';
 import './Leads.css';
 import Lottie from 'lottie-react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function LeadsPage() {
   const [leads, setLeads] = useState([]);
